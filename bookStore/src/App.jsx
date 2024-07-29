@@ -1,27 +1,21 @@
 import "./App.scss";
 import logo from "./assets/logo.png";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import BookPage from "./components/BookPage";
 
 function App() {
   return (
     <div className="container">
-      <Router>
+      <Router basename="/bookStore">
         <header>
-          <Link to="/">
-            <img src={logo} alt="logo" />
-          </Link>
-          {/* <div className="items">
-            <ul>
-              <li>Home</li>
-              <li>About us</li>
-              <li>Support</li>
-            </ul>
-          </div> */}
+          {/* <Link to="/"> */}
+          <img src={logo} alt="logo" />
+          {/* </Link> */}
         </header>
+        <HomePage />
         <Routes>
-          <Route path="/" index element={<HomePage />} />
+          {/* <Route index element={<HomePage/>}/> */}
           <Route path="/book/:primary_isbn10" element={<BookPage />} />
         </Routes>
       </Router>
