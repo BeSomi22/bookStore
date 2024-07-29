@@ -7,15 +7,12 @@ import BookPage from "./components/BookPage";
 function App() {
   return (
     <div className="container">
-      <Router basename="/bookStore">
+      <Router>
         <header>
-          {/* <Link to="/"> */}
           <img src={logo} alt="logo" />
-          {/* </Link> */}
         </header>
         <HomePage />
         <Routes>
-          {/* <Route index element={<HomePage/>}/> */}
           <Route path="/book/:primary_isbn10" element={<BookPage />} />
         </Routes>
       </Router>
